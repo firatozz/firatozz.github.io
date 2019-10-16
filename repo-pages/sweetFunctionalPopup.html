@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Sweet Functional Popup</title>
+</head>
+
+<body>
+    <div class="main"
+        style="padding: 0; margin: 0;display: flex;font-family: monospace;min-height: -webkit-fill-available;align-items: center;justify-content: center;">
+        <div style="text-align: center">
+            <img src="./assets/img/funcpopup.png" alt="" style="width: 250px">
+            <h1>Sweet Functional Popup</h1>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript" src="./scripts/sweetFunctionalPopup.min.js"></script>
+<script>
+    var popUp1 = new sweetFunctionalPopup();
+
+    popUp1.setOptions({
+        width: 400,
+        height: 400,
+        animation: "fade",
+        transformDefault: "scaleX(1)"
+    });
+</script>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script type="text/javascript" src="liteNotificationBox.min.js"></script>
+</head>
+
+<body>
+    <div class="main"
+        style="padding: 0; margin: 0;display: flex;font-family: monospace;min-height: -webkit-fill-available;align-items: center;justify-content: center;">
+        <div style="text-align: center">
+            <img src="./assets/img/freelyshout.png" alt="" style="width: 125px">
+            <h1>Lite Notification Box</h1>
+        </div>
+    </div>
+
+</body>
+<script>
+    liteNotificationBox.init({
+        position: "topLeft",
+        animation: "slide",
+        imageUrl: "https://img.visilabs.net/banner/uploaded_images/206_1171_20190723134730982.png",
+        targetUrl: "www.google.com",
+        targetOpenNewTab: true,
+        css: ".ltImg{border-radius:10px;}",
+        cookieExp: 7,
+        showOncePerSession: false,
+    });
+</script>
+
+</html>
