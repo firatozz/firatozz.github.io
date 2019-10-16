@@ -2,4 +2,4 @@
 GithubIO
 
 
-https://firatozz.github.io/
+<a href="https://firatozz.github.io/" target="_blank"> firatozz.github.io </a>
