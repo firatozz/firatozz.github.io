@@ -13,11 +13,17 @@
     </div>
 
 </body>
-<script type="text/javascript" src="sweetFunctionalPopup_v2.js"></script>
-<!-- <script type="text/javascript" src="sweetFunctionalPopup.js"></script> -->
+<script type="text/javascript" src="./scripts/sweetFunctionalPopup.js"></script>
 <script>
-    // sweetFunctionalPopup.init({
-    // });
+    
+var popUp1 = new sweetFunctionalPopup();
+
+popUp1.setOptions({
+    width: 400,
+    height: 400,
+    animation: "fade",
+    transformDefault: "scaleX(1)"
+});
 </script>
 
 </html>
