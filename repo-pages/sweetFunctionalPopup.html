@@ -3,28 +3,70 @@
 
 <head>
     <title>Sweet Functional Popup</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="../assets/css/prism.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
-<body>
-    <div class="main"
-        style="padding: 0; margin: 0;display: flex;font-family: monospace;min-height: -webkit-fill-available;align-items: center;justify-content: center;">
+<body style="margin:5% 10%;">
+    <div class="main" style="padding: 0; margin: 0;display: flex;font-family: monospace;justify-content: center;">
         <div style="text-align: center">
             <img src="../assets/img/funcpopup.png" alt="" style="width: 250px">
             <h1>Sweet Functional Popup</h1>
         </div>
     </div>
+    <br><br>
+    <div>
+        <div class="">
+            <h2>New Features</h2>
+            <hr>
+            <li>Customizable via CSS.</li>
+            <li>Customizable via HTML.</li>
+            <li>Cookie support with optional expiry date.</li>
+            <li>Pageviews Counter (Show after the number of pageviews)</li>
+            <li>Set a timed delay before the script starts tracking show notification box.</li>
+            <li>Auto Close with Timer</li>
+            <li>Page scroll control</li>
+            <li>LightBox or Exit Intent Usage</li>
+            <li>4 different animations</li>
+            <li>Show once per session Option</li>
+            <li>Re-direct and new tab management</li>
+        </div>
+        <br><br>
+        <div class="">
+            <h2>Usage</h2>
+            <hr>
+            <p>Simply include the script and call its init function with any options you choose.</p>
+            <pre>
+                <code class="language-js">
+                    <script type="text/javascript" src="sweetFunctionalPopup.min.js"></script>
 
+                    <script type="text/javascript">
+                        var popUp = new sweetFunctionalPopup();
+                        popUp.setOptions({
+                             // options..
+                        });
+                    </script>
+            </code>
+            </pre>
+
+        </div>
+    </div>
 </body>
+<script type="text/javascript" src="../scripts/prism.js"></script>
 <script type="text/javascript" src="../scripts/sweetFunctionalPopup.min.js"></script>
 <script>
-    var popUp1 = new sweetFunctionalPopup();
+    // var popUp1 = new sweetFunctionalPopup();
 
-    popUp1.setOptions({
-        width: 300,
-        height: 300,
-        animation: "fade",
-        transformDefault: "scaleX(1)"
-    });
+    // popUp1.setOptions({
+    //     width: 300,
+    //     height: 300,
+    //     animation: "fade",
+    //     transformDefault: "scaleX(1)"
+    // });
 </script>
 
 </html>
