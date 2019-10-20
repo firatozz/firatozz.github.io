@@ -3,6 +3,7 @@
 
 <head>
     <script type="text/javascript" src="../scripts/liteNotificationBox.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
 
 <body>
@@ -12,9 +13,91 @@
             <h1>Lite Notification Box</h1>
         </div>
     </div>
+    <br><br><br>
+    <div class="container col-md-8 mb-3">
+        <h2 class="text-center">Try It.</h2>
+        <br>
+        <div class="container col-md-8">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputEmail4">Width</label>
+                    <input type="text" class="form-control" id="widthPre" placeholder="Default: 300px">
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Height</label>
+                    <input type="text" class="form-control" id="heightPre" placeholder="Default: 300px">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="inputState">Position</label>
+                    <select id="position" class="form-control">
+                        <option value="bottomRight">Bottom Right</option>
+                        <option value="bottomLeft">Bottom Left</option>
+                        <option value="bottomCenter"> Bottom Center</option>
+                        <option value="topRight">Top Right</option>
+                        <option value="topLeft">Top Left</option>
+                        <option value="topCenter">Top Center</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputState">Animation</label>
+                    <select id="animation" class="form-control">
+                        <option selected value="slide">Slide</option>
+                        <option value="blur">Blur</option>
+                        <option value="bubble">Bubble</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="imgurl">Image URL</label>
+                <input type="text" class="form-control" id="imgurl"
+                    placeholder="https://firatozz.github.io/assets/img/freelyshout.png">
+            </div>
+            <div class="form-group">
+                <label for="trgturl">Target URL</label>
+                <input type="text" class="form-control" id="trgturl"
+                    value="https://github.com/firatozz/Lite-Notification-Box"
+                    placeholder="https://github.com/firatozz/Lite-Notification-Box">
+            </div>
+            <button onclick="test()" class="btn btn-lg btn-block btn-primary text-center">Try</button>
+        </div>
+    </div>
 
 </body>
 <script>
+    function test() {
+        var x = document.querySelector(".ltNotificationBox");
+        if (x == null) {
+            var posi = position.options[position.selectedIndex].value;
+            var anim = animation.options[animation.selectedIndex].value;
+            var widthPre = document.querySelector("#widthPre").value == "" ? "300" : document.querySelector("#widthPre")
+                .value;
+            var heightPre = document.querySelector("#heightPre").value == "" ? "300" : document.querySelector(
+                "#heightPre").value;
+            var imageurl = document.querySelector("#imgurl").value == "" ?
+                "https://firatozz.github.io/assets/img/freelyshout.png" : document.querySelector("#imgurl").value;
+            var targeturl = document.querySelector("#trgturl").value == "" ?
+                "github.com/firatozz/Lite-Notification-Box" : document.querySelector("#trgturl").value
+            console.log(imageurl);
+
+            liteNotificationBox.init({
+                width: widthPre,
+                height: heightPre,
+                position: posi,
+                animation: anim,
+                imageUrl: imageurl,
+                targetUrl: targeturl,
+                targetOpenNewTab: true,
+                css: ".ltImg{border-radius:10px; background:#ccc;}, .ltCloseEl{width:8%;}",
+                cookieExp: 7,
+                showOncePerSession: false,
+            });
+        } else {
+            document.querySelector(".ltCloseEl").click();
+        }
+    }
+
     liteNotificationBox.init({
         position: "bottomRight",
         animation: "slide",
