@@ -18,7 +18,7 @@
         </div>
     </div>
     <hr class="col-md-8">
-    <div class="container col-md-8 mb-3 mt-3">
+    <div class="container col-md-10 mb-3 mt-3">
         <h2 class="text-center">Try It.</h2>
         <br>
         <div class="container col-md-10">
@@ -48,7 +48,7 @@
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label>Delay</label>
-                    <input type="number" min="0" class="form-control" id="delayPre" placeholder="0 (sn)">
+                    <input type="number" min="0" class="form-control" id="delayPre" placeholder="1 (sn)">
                 </div>
                 <div class="form-group col-md-4">
                     <label>Cookie Expired Day Count</label>
@@ -96,7 +96,7 @@
     <!-- Output -->
     <br><br>
     <hr class="container col-md-8">
-    <div class="container col-md-7">
+    <div class="container col-md-8">
         <h2>Sample Usage:</h2>
         <pre>
             <code class="language-js" id="code-section">
@@ -104,7 +104,7 @@
 
                     var popUp1 = new sweetFunctionalPopup();
                     popUp1.setOptions({
-                        width: widthPre,
+                        width: 300,
                         height: 300,
                         animation: "fade",
                         transformDefault: "scaleX(1)"
@@ -127,9 +127,7 @@
     </footer>
 
 </body>
-<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-</script>-->
+
 <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>
 <script type="text/javascript" src="../scripts/sweetFunctionalPopup.min.js"></script>
 <script>
@@ -160,6 +158,52 @@
                 settings.cookieExp = t;
             }
 
+            var t = document.querySelector("#showCountPageviewsPre").value;
+            if (t != '') {
+                settings.showCountPageviews = t;
+            }
+
+            var t = document.querySelector("#imageurlPre").value;
+            if (t != '') {
+                settings.imageUrl = t;
+            }
+
+            var t = document.querySelector("#targeturlPre").value;
+            if (t != '') {
+                settings.targetUrl = t;
+            }
+
+            var t = document.querySelector("#autoClosePre").value;
+            if (t != '') {
+                settings.autoClose = t;
+            }
+
+            var t = document.querySelector("#targetOpenNewTabPre").checked;
+            if (t != true) {
+                settings.targetOpenNewTab = t;
+            }
+
+            var t = document.querySelector("#canScrollPre").checked;
+            if (t != false) {
+                settings.canScroll = t;
+            }
+
+            var t = document.querySelector("#showAsExitIntentPre").checked;
+            if (t != false) {
+                settings.showAsExitIntent = t;
+            }
+
+            var t = document.querySelector("#showOncePerSessionPre").checked;
+            if (t != false) {
+                settings.showOncePerSession = t;
+            }
+
+            var t = animation.options[animation.selectedIndex].value;
+            if (t != '') {
+                settings.animation = t;
+            }
+
+
 
 
             var string = `&ltscript type="text/javascript" src="../scripts/sweetFunctionalPopup.min.js">&lt/script&gt
@@ -174,76 +218,14 @@ popUp1.setOptions({`;
                 Object.keys(settings).forEach((key, index, self) => {
                     string1 += "\n\t" + key + ": " + settings[key] + ",";
                 })
-
                 string1 = string1.substr(0, string1.length - 1);
                 string1 += "\n";
-
             }
-
-
             string += string1;
-
             string += `});\n`;
-
 
             document.getElementById('code-section').innerHTML = string;
             Prism.highlightAll();
-        }
-
-
-
-
-
-
-
-        var x = document.querySelector(".swFunctionalPopup");
-        if (x == null) {
-
-            var widthPre = document.querySelector("#widthPre").value == "" ? "300" : document.querySelector("#widthPre")
-                .value;
-            var heightPre = document.querySelector("#heightPre").value == "" ? "300" : document.querySelector(
-                    "#heightPre")
-                .value;
-            var anim = animation.options[animation.selectedIndex].value;
-            var delayPre = document.querySelector("#delayPre").value == "" ? "0" : document.querySelector("#delayPre")
-                .value;
-            var cookieExpPre = document.querySelector("#cookieExpPre").value == "" ? "7" : document.querySelector(
-                "#cookieExpPre").value;
-            var showCountPageviewsPre = document.querySelector("#showCountPageviewsPre").value == "" ? "0" : document
-                .querySelector("#showCountPageviewsPre").value;
-            var imageurlPre = document.querySelector("#imageurlPre").value == "" ?
-                "../assets/img/javascript.png" : document.querySelector("#imageurlPre").value;
-            var targeturlPre = document.querySelector("#targeturlPre").value == "" ?
-                "https://github.com/firatozz/Sweet-Functional-Popup" : document.querySelector("#targeturlPre").value;
-
-            var autoClosePre = document.querySelector("#autoClosePre").value == "" ? 0 : document.querySelector(
-                "#autoClosePre").value;
-
-            var targetOpenNewTabPre = document.querySelector("#targetOpenNewTabPre").checked;
-            var canScrollPre = document.querySelector("#canScrollPre").checked;
-            var showAsExitIntentPre = document.querySelector("#showAsExitIntentPre").checked;
-            var showOncePerSessionPre = document.querySelector("#showOncePerSessionPre").checked;
-
-            console.log(showOncePerSessionPre);
-
-            console.log(autoClosePre);
-            var popUp1 = new sweetFunctionalPopup();
-            popUp1.setOptions({
-                width: widthPre,
-                height: heightPre,
-                animation: anim,
-                delay: delayPre,
-                cookieExp: cookieExpPre,
-                showCountPageviews: showCountPageviewsPre,
-                imageUrl: imageurlPre,
-                targetUrl: targeturlPre,
-                autoClose: autoClosePre,
-                targetOpenNewTab: targetOpenNewTabPre,
-                showAsExitIntent: showAsExitIntentPre,
-                showOncePerSession: showOncePerSessionPre,
-                canScroll: canScrollPre,
-                transformDefault: "scaleX(1)"
-            });
         }
     }
 </script>
