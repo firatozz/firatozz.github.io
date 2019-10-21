@@ -21,82 +21,81 @@
     <div class="container col-md-8 mb-3">
         <h2 class="text-center">Try It.</h2>
         <br>
-        <div class="container col-md-8">
+        <div class="container col-md-10">
             <div class="form-row">
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                     <label>Width</label>
-                    <input type="text" class="form-control" id="widthPre" placeholder="300 (px)">
+                    <input type="number" min="100" class="form-control" id="widthPre" placeholder="300 (px)">
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
                     <label>Height</label>
-                    <input type="text" class="form-control" id="heightPre" placeholder="300 (px)">
+                    <input type="number" min="100" class="form-control" id="heightPre" placeholder="300 (px)">
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-md-3">
+                    <label>AutoClose</label>
+                    <input type="number" min="0" class="form-control" id="autoClosePre" placeholder="0 (sn)">
+                </div>
+                <div class="form-group col-md-3">
                     <label>Animation</label>
                     <select id="animation" class="form-control">
-                        <option selected value="slide">Fade</option>
+                        <option selected value="fade">Fade</option>
                         <option value="blur">Blur</option>
                         <option value="bubble">Bubble</option>
-                        <option value="bubble">Classic</option>
+                        <option value="classic">Classic</option>
                     </select>
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-4">
                     <label>Delay</label>
-                    <input type="text" class="form-control" id="delay" placeholder="3 (sn)">
+                    <input type="number" min="0" class="form-control" id="delayPre" placeholder="0 (sn)">
                 </div>
                 <div class="form-group col-md-4">
                     <label>Cookie Expired Day Count</label>
-                    <input type="text" class="form-control" id="cookieExp" placeholder="7">
+                    <input type="number" min="1" class="form-control" id="cookieExpPre" placeholder="7">
                 </div>
                 <div class="form-group col-md-4">
                     <label>Show Count Page Views</label>
-                    <input type="text" class="form-control" id="showCountPageviews" placeholder="0">
+                    <input type="number" min="0" class="form-control" id="showCountPageviewsPre" placeholder="0">
                 </div>
             </div>
             <div class="form-group">
                 <label for="imgurl">Image URL</label>
-                <input type="text" class="form-control" id="imgurl"
-                    placeholder="https://firatozz.github.io/assets/img/freelyshout.png">
+                <input type="text" class="form-control" id="imageurlPre"
+                    placeholder="https://firatozz.github.io/assets/img/funcpopup.png">
             </div>
             <div class="form-group">
-                <label for="trgturl">Target URL</label>
-                <input type="text" class="form-control" id="trgturl"
-                    value="https://github.com/firatozz/Lite-Notification-Box"
-                    placeholder="https://github.com/firatozz/Lite-Notification-Box">
+                <label for="targeturlPre">Target URL</label>
+                <input type="text" class="form-control" id="targeturlPre"
+                    value="https://github.com/firatozz/Sweet-Functional-Popup"
+                    placeholder="https://github.com/firatozz/Sweet-Functional-Popup">
             </div>
             <div class="form-row ml-4 pl-2">
-                <div class="form-group col-md-4 custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="autoClose">
-                    <label class="custom-control-label" for="autoClose">AutoClose</label>
+                <div class="form-group col-md-3 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" checked id="targetOpenNewTabPre">
+                    <label class="custom-control-label" for="targetOpenNewTabPre">Target Open New Tab</label>
                 </div>
-                <div class="form-group col-md-4 custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" checked id="targetOpenNewTab">
-                    <label class="custom-control-label" for="targetOpenNewTab">Target Open New Tab</label>
+                <div class="form-group col-md-3 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="canScrollPre">
+                    <label class="custom-control-label" for="canScrollPre">can Scroll</label>
                 </div>
-                <div class="form-group col-md-4 custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="canScroll">
-                    <label class="custom-control-label" for="canScroll">can Scroll</label>
+                <div class="form-group col-md-3 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="showAsExitIntentPre">
+                    <label class="custom-control-label" for="showAsExitIntentPre">Show as Exit Intent</label>
                 </div>
-            </div>
-            <div class="form-row ml-4 pl-2">
-                <div class="form-group col-md-4 custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="showAsExitIntent">
-                    <label class="custom-control-label" for="showAsExitIntent">Show as Exit Intent</label>
-                </div>
-                <div class="form-group col-md-4 custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="showOncePerSession">
-                    <label class="custom-control-label" for="showOncePerSession">Show Once Per Session</label>
+                <div class="form-group col-md-3 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="showOncePerSessionPre">
+                    <label class="custom-control-label" for="showOncePerSessionPre">Show Once Per Session</label>
                 </div>
             </div>
-
-            <button onclick="test()" class="btn btn-lg btn-block btn-primary text-center">Try</button>
+            <div class="container text-center" style="width: 50%;"><button onclick="test()"
+                    class="btn btn-lg btn-primary btn-block mt-5">Try</button>
+            </div>
         </div>
     </div>
     <!-- Output -->
     <br><br>
-    <hr class="container col-md-6">
+    <hr class="container col-md-8">
     <div class="container col-md-7">
         <h2>Sample Usage:</h2>
         <pre>
@@ -114,11 +113,11 @@
         </pre>
     </div>
 
-    <footer class="footer mt-auto py-3" style="background: #eee;">
+    <footer class="footer mt-5 py-3" style="background: #eee;">
         <div class="container">
             <div class="row">
                 <a class="col-md-6 text-muted" href="https://github.com/firatozz/Sweet-Functional-Popup"
-                    target="_blank">Documentation</a>
+                    target="_blank">Sweet Functional Popup Documentation</a>
                 <br>
                 <a class="col-md-6 text-muted text-right" href="https://github.com/firatozz/"
                     target="_blank">github.com/firatozz ©
@@ -134,14 +133,58 @@
 <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>
 <script type="text/javascript" src="../scripts/sweetFunctionalPopup.min.js"></script>
 <script>
-    // var popUp1 = new sweetFunctionalPopup();
+    function test() {
+        var x = document.querySelector(".swFunctionalPopup");
+        if (x == null) {
 
-    // popUp1.setOptions({
-    //     width: 300,
-    //     height: 300,
-    //     animation: "fade",
-    //     transformDefault: "scaleX(1)"
-    // });
+            var widthPre = document.querySelector("#widthPre").value == "" ? "300" : document.querySelector("#widthPre")
+                .value;
+            var heightPre = document.querySelector("#heightPre").value == "" ? "300" : document.querySelector(
+                    "#heightPre")
+                .value;
+            var anim = animation.options[animation.selectedIndex].value;
+            var delayPre = document.querySelector("#delayPre").value == "" ? "0" : document.querySelector("#delayPre")
+                .value;
+            var cookieExpPre = document.querySelector("#cookieExpPre").value == "" ? "7" : document.querySelector(
+                "#cookieExpPre").value;
+            var showCountPageviewsPre = document.querySelector("#showCountPageviewsPre").value == "" ? "0" : document
+                .querySelector("#showCountPageviewsPre").value;
+            var imageurlPre = document.querySelector("#imageurlPre").value == "" ?
+                "https://firatozz.github.io/assets/img/javascript.png" : document.querySelector("#imageurlPre").value;
+            var targeturlPre = document.querySelector("#targeturlPre").value == "" ?
+                "https://github.com/firatozz/Sweet-Functional-Popup" : document.querySelector("#targeturlPre").value;
+
+            var autoClosePre = document.querySelector("#autoClosePre").value == "" ? 0 : document.querySelector(
+                "#autoClosePre").value;
+
+            var targetOpenNewTabPre = document.querySelector("#targetOpenNewTabPre").checked;
+            var canScrollPre = document.querySelector("#canScrollPre").checked;
+            var showAsExitIntentPre = document.querySelector("#showAsExitIntentPre").checked;
+            var showOncePerSessionPre = document.querySelector("#showOncePerSessionPre").checked;
+
+            console.log(showOncePerSessionPre);
+
+            console.log(autoClosePre);
+            var popUp1 = new sweetFunctionalPopup();
+            popUp1.setOptions({
+                width: widthPre,
+                height: heightPre,
+                animation: anim,
+                delay: delayPre,
+                cookieExp: cookieExpPre,
+                showCountPageviews: showCountPageviewsPre,
+                imageUrl: imageurlPre,
+                targetUrl: targeturlPre,
+                autoClose: autoClosePre,
+                targetOpenNewTab: targetOpenNewTabPre,
+                showAsExitIntent: showAsExitIntentPre,
+                showOncePerSession: showOncePerSessionPre,
+                canScroll: canScrollPre,
+                transformDefault: "scaleX(1)",
+                css: ".swFunctionalPopup{background: #ccc;border-radius:10px;}"
+            });
+        }
+    }
 </script>
 
 </html>
