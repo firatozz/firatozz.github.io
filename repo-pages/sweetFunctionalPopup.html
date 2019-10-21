@@ -5,7 +5,7 @@
     <title>Sweet Functional Popup</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="../assets/css/prism.css">
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 </head>
@@ -17,25 +17,130 @@
             <h1>Sweet Functional Popup</h1>
         </div>
     </div>
-</body>
+    <br><br><br>
+    <div class="container col-md-8 mb-3">
+        <h2 class="text-center">Try It.</h2>
+        <br>
+        <div class="container col-md-8">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Width</label>
+                    <input type="text" class="form-control" id="widthPre" placeholder="300 (px)">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Height</label>
+                    <input type="text" class="form-control" id="heightPre" placeholder="300 (px)">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Animation</label>
+                    <select id="animation" class="form-control">
+                        <option selected value="slide">Fade</option>
+                        <option value="blur">Blur</option>
+                        <option value="bubble">Bubble</option>
+                        <option value="bubble">Classic</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Delay</label>
+                    <input type="text" class="form-control" id="delay" placeholder="3 (sn)">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="imgurl">Image URL</label>
+                <input type="text" class="form-control" id="imgurl"
+                    placeholder="https://firatozz.github.io/assets/img/freelyshout.png">
+            </div>
+            <div class="form-group">
+                <label for="trgturl">Target URL</label>
+                <input type="text" class="form-control" id="trgturl"
+                    value="https://github.com/firatozz/Lite-Notification-Box"
+                    placeholder="https://github.com/firatozz/Lite-Notification-Box">
+            </div>
+            <div class="form-row ml-4 pl-2">
+                <div class="form-group col-md-6 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="autoClose">
+                    <label class="custom-control-label">AutoClose</label>
+                </div>
+                <div class="form-group col-md-6 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" checked id="targetOpenNewTab">
+                    <label class="custom-control-label" for="customSwitch1">Target Open New Tab</label>
+                </div>
+            </div>
+            <div class="form-row ml-4 pl-2">
+                <div class="form-group col-md-6 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="canScroll">
+                    <label class="custom-control-label">can Scroll</label>
+                </div>
+                <div class="form-group col-md-6 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="showAsExitIntent">
+                    <label class="custom-control-label">Show as Exit Intent</label>
+                </div>
+            </div>
+            <div class="form-row ml-4 pl-2">
+                <div class="form-group col-md-6 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="showOncePerSession">
+                    <label class="custom-control-label">Show Once Per Session</label>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Cookie Expired Day Count</label>
+                    <input type="text" class="form-control" id="cookieExp" placeholder="7">
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Show Count Page Views</label>
+                    <input type="text" class="form-control" id="showCountPageviews" placeholder="0">
+                </div>
+            </div>
+            <button onclick="test()" class="btn btn-lg btn-block btn-primary text-center">Try</button>
+        </div>
+    </div>
+    <!-- Output -->
+    <br><br>
+    <hr class="container col-md-6">
+    <div class="container col-md-7">
+        <h2>Sample Usage:</h2>
+        <pre>
+            <code class="language-js">
+                    &ltscript type="text/javascript" src="../scripts/sweetFunctionalPopup.min.js">&lt/script&gt
 
+                    var popUp1 = new sweetFunctionalPopup();
+                    popUp1.setOptions({
+                        width: 300,
+                        height: 300,
+                        animation: "fade",
+                        transformDefault: "scaleX(1)"
+                    });
+            </code>
+        </pre>
+    </div>
+
+    <footer class="footer mt-auto py-3" style="background: #eee;">
+        <div class="container">
+            <div class="row">
+                <a class="col-md-6 text-muted" href="https://github.com/firatozz/Sweet-Functional-Popup"
+                    target="_blank">Documentation</a>
+                <br>
+                <a class="col-md-6 text-muted text-right" href="https://github.com/firatozz/" target="_blank">github.com/firatozz ©
+                    2019</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>
 <script type="text/javascript" src="../scripts/sweetFunctionalPopup.min.js"></script>
 <script>
-    var popUp1 = new sweetFunctionalPopup();
+    // var popUp1 = new sweetFunctionalPopup();
 
-    popUp1.setOptions({
-        width: 300,
-        height: 300,
-        animation: "fade",
-        transformDefault: "scaleX(1)"
-    });
-
-    Prism.plugins.NormalizeWhitespace.setDefaults({
-        'remove-trailing': true,
-        'remove-indent': true,
-        'left-trim': true,
-        'right-trim': true,
-    });
+    // popUp1.setOptions({
+    //     width: 300,
+    //     height: 300,
+    //     animation: "fade",
+    //     transformDefault: "scaleX(1)"
+    // });
 </script>
 
 </html>

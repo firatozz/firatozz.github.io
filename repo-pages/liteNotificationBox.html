@@ -4,6 +4,7 @@
 <head>
     <script type="text/javascript" src="../scripts/liteNotificationBox.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/plugins/prism/prism.css">
 </head>
 
 <body>
@@ -21,11 +22,11 @@
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputEmail4">Width</label>
-                    <input type="text" class="form-control" id="widthPre" placeholder="Default: 300px">
+                    <input type="text" class="form-control" id="widthPre" placeholder="300 (px)">
                 </div>
                 <div class="form-group col-md-6">
                     <label for="inputPassword4">Height</label>
-                    <input type="text" class="form-control" id="heightPre" placeholder="Default: 300px">
+                    <input type="text" class="form-control" id="heightPre" placeholder="300 (px)">
                 </div>
             </div>
             <div class="form-row">
@@ -63,6 +64,26 @@
             <button onclick="test()" class="btn btn-lg btn-block btn-primary text-center">Try</button>
         </div>
     </div>
+    <!-- Output -->
+    <br><br>
+    <hr class="container col-md-6">
+    <div class="container col-md-5">
+        <h2>Usage:</h2>
+        <pre>
+            <code class="language-js">
+                liteNotificationBox.init({
+                    position: "bottomRight",
+                    animation: "slide",
+                    imageUrl: "https://firatozz.github.io/assets/img/freelyshout.png",
+                    targetUrl: "github.com/firatozz/Lite-Notification-Box",
+                    targetOpenNewTab: true,
+                    css: ".ltImg{border-radius:10px; background:#ccc;}",
+                    cookieExp: 7,
+                    showOncePerSession: false,
+                });
+            </code>
+        </pre>
+    </div>
 
 </body>
 <script>
@@ -94,7 +115,7 @@
                 showOncePerSession: false,
             });
         } else {
-            document.querySelector(".ltCloseEl").click();
+            x.remove();
         }
     }
 
@@ -109,5 +130,6 @@
         showOncePerSession: false,
     });
 </script>
+<script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>
 
 </html>
