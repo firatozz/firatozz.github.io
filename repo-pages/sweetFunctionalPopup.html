@@ -17,8 +17,8 @@
             <h1>Sweet Functional Popup</h1>
         </div>
     </div>
-    <br><br><br>
-    <div class="container col-md-8 mb-3">
+    <hr class="col-md-8">
+    <div class="container col-md-8 mb-3 mt-3">
         <h2 class="text-center">Try It.</h2>
         <br>
         <div class="container col-md-10">
@@ -71,13 +71,13 @@
                     placeholder="https://github.com/firatozz/Sweet-Functional-Popup">
             </div>
             <div class="form-row ml-4 pl-2">
-                <div class="form-group col-md-3 custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" checked id="targetOpenNewTabPre">
-                    <label class="custom-control-label" for="targetOpenNewTabPre">Target Open New Tab</label>
-                </div>
-                <div class="form-group col-md-3 custom-control custom-switch">
+                <div class="form-group col-md-2 custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="canScrollPre">
                     <label class="custom-control-label" for="canScrollPre">can Scroll</label>
+                </div>
+                <div class="form-group col-md-4 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" checked id="targetOpenNewTabPre">
+                    <label class="custom-control-label" for="targetOpenNewTabPre">Target Open New Tab</label>
                 </div>
                 <div class="form-group col-md-3 custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="showAsExitIntentPre">
@@ -89,7 +89,7 @@
                 </div>
             </div>
             <div class="container text-center" style="width: 50%;"><button onclick="test()"
-                    class="btn btn-lg btn-primary btn-block mt-5">Try</button>
+                    class="btn btn-lg btn-primary btn-block mt-5">Try It</button>
             </div>
         </div>
     </div>
@@ -99,12 +99,12 @@
     <div class="container col-md-7">
         <h2>Sample Usage:</h2>
         <pre>
-            <code class="language-js">
+            <code class="language-js" id="code-section">
                     &ltscript type="text/javascript" src="../scripts/sweetFunctionalPopup.min.js">&lt/script&gt
 
                     var popUp1 = new sweetFunctionalPopup();
                     popUp1.setOptions({
-                        width: 300,
+                        width: widthPre,
                         height: 300,
                         animation: "fade",
                         transformDefault: "scaleX(1)"
@@ -127,13 +127,75 @@
     </footer>
 
 </body>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+<!--<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
-</script>
+</script>-->
 <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>
 <script type="text/javascript" src="../scripts/sweetFunctionalPopup.min.js"></script>
 <script>
     function test() {
+
+        var settings = {};
+
+        var x = document.querySelector(".swFunctionalPopup");
+        if (x == null) {
+
+            var t = document.querySelector("#widthPre").value;
+            if (t != '') {
+                settings.width = t;
+            }
+
+            var t = document.querySelector("#heightPre").value;
+            if (t != '') {
+                settings.height = t;
+            }
+
+            var t = document.querySelector("#delayPre").value;
+            if (t != '') {
+                settings.delay = t;
+            }
+
+            var t = document.querySelector("#cookieExpPre").value;
+            if (t != '') {
+                settings.cookieExp = t;
+            }
+
+
+
+            var string = `&ltscript type="text/javascript" src="../scripts/sweetFunctionalPopup.min.js">&lt/script&gt
+
+var popUp1 = new sweetFunctionalPopup();
+popUp1.setOptions({`;
+
+            var string1 = '';
+
+            if (Object.keys(settings).length > 0) {
+
+                Object.keys(settings).forEach((key, index, self) => {
+                    string1 += "\n\t" + key + ": " + settings[key] + ",";
+                })
+
+                string1 = string1.substr(0, string1.length - 1);
+                string1 += "\n";
+
+            }
+
+
+            string += string1;
+
+            string += `});\n`;
+
+
+            document.getElementById('code-section').innerHTML = string;
+            Prism.highlightAll();
+        }
+
+
+
+
+
+
+
         var x = document.querySelector(".swFunctionalPopup");
         if (x == null) {
 
