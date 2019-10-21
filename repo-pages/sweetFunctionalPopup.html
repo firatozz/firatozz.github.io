@@ -228,52 +228,25 @@ popUp1.setOptions({`;
             Prism.highlightAll();
 
 
-            if (x == null) {
-                var widthPre = document.querySelector("#widthPre").value == "" ? "300" : document.querySelector(
-                        "#widthPre")
-                    .value;
-                var heightPre = document.querySelector("#heightPre").value == "" ? "300" : document.querySelector(
-                        "#heightPre")
-                    .value;
-                var anim = animation.options[animation.selectedIndex].value;
-                var delayPre = document.querySelector("#delayPre").value == "" ? "0" : document.querySelector(
-                        "#delayPre")
-                    .value;
-                var cookieExpPre = document.querySelector("#cookieExpPre").value == "" ? "7" : document.querySelector(
-                    "#cookieExpPre").value;
-                var showCountPageviewsPre = document.querySelector("#showCountPageviewsPre").value == "" ? "0" :
-                    document
-                    .querySelector("#showCountPageviewsPre").value;
-                var imageurlPre = document.querySelector("#imageurlPre").value == "" ?
-                    "https://firatozz.github.io/assets/img/javascript.png" : document.querySelector("#imageurlPre")
-                    .value;
-                var targeturlPre = document.querySelector("#targeturlPre").value == "" ?
-                    "https://github.com/firatozz/Sweet-Functional-Popup" : document.querySelector("#targeturlPre")
-                    .value;
-                var autoClosePre = document.querySelector("#autoClosePre").value == "" ? 0 : document.querySelector(
-                    "#autoClosePre").value;
-                var targetOpenNewTabPre = document.querySelector("#targetOpenNewTabPre").checked;
-                var canScrollPre = document.querySelector("#canScrollPre").checked;
-                var showAsExitIntentPre = document.querySelector("#showAsExitIntentPre").checked;
-                var showOncePerSessionPre = document.querySelector("#showOncePerSessionPre").checked;
-                var popUp1 = new sweetFunctionalPopup();
-                popUp1.setOptions({
-                    width: widthPre,
-                    height: heightPre,
-                    delay: delayPre,
-                    cookieExp: cookieExpPre,
-                    showCountPageviews: showCountPageviewsPre,
-                    imageUrl: imageurlPre,
-                    targetUrl: targeturlPre,
-                    autoClose: autoClosePre,
-                    targetOpenNewTab: targetOpenNewTabPre,
-                    showAsExitIntent: showAsExitIntentPre,
-                    showOncePerSession: showOncePerSessionPre,
-                    canScroll: canScrollPre,
-                    transformDefault: "scaleX(1)",
-                    css: ".swFunctionalPopup{background: #ccc;border-radius:10px;}"
-                });
-            }
+            var popUp2 = new sweetFunctionalPopup();
+            popUp2.setOptions({
+                width:settings.width,
+                height: settings.height,
+                autoClose: settings.autoClose,
+                animation: settings.animation,
+                imageUrl: settings.imageUrl,
+                targetUrl: settings.targetUrl,
+                targetOpenNewTab: settings.targetOpenNewTab,
+                delay: settings.delay,
+                canScroll: settings.canScroll,
+                showAsExitIntent: settings.showAsExitIntent,
+                showCountPageviews: settings.showCountPageviews,
+                showOncePerSession: settings.showOncePerSession,
+                
+            });
+            console.log(string1);
+    
+            
         }
     }
 </script>
