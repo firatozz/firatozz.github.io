@@ -62,7 +62,7 @@
             <div class="form-group">
                 <label for="imgurl">Image URL</label>
                 <input type="text" class="form-control" id="imageurlPre"
-                    placeholder="https://firatozz.github.io/assets/img/funcpopup.png">
+                    placeholder="https://firatozz.github.io/assets/img/javascript.png">
             </div>
             <div class="form-group">
                 <label for="targeturlPre">Target URL</label>
@@ -150,7 +150,7 @@
             var showCountPageviewsPre = document.querySelector("#showCountPageviewsPre").value == "" ? "0" : document
                 .querySelector("#showCountPageviewsPre").value;
             var imageurlPre = document.querySelector("#imageurlPre").value == "" ?
-                "https://firatozz.github.io/assets/img/javascript.png" : document.querySelector("#imageurlPre").value;
+                "../assets/img/javascript.png" : document.querySelector("#imageurlPre").value;
             var targeturlPre = document.querySelector("#targeturlPre").value == "" ?
                 "https://github.com/firatozz/Sweet-Functional-Popup" : document.querySelector("#targeturlPre").value;
 
@@ -180,8 +180,7 @@
                 showAsExitIntent: showAsExitIntentPre,
                 showOncePerSession: showOncePerSessionPre,
                 canScroll: canScrollPre,
-                transformDefault: "scaleX(1)",
-                css: ".swFunctionalPopup{background: #ccc;border-radius:10px;}"
+                transformDefault: "scaleX(1)"
             });
         }
     }
