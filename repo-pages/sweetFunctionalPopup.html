@@ -23,17 +23,15 @@
         <br>
         <div class="container col-md-8">
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label>Width</label>
                     <input type="text" class="form-control" id="widthPre" placeholder="300 (px)">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label>Height</label>
                     <input type="text" class="form-control" id="heightPre" placeholder="300 (px)">
                 </div>
-            </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label>Animation</label>
                     <select id="animation" class="form-control">
                         <option selected value="slide">Fade</option>
@@ -42,9 +40,19 @@
                         <option value="bubble">Classic</option>
                     </select>
                 </div>
-                <div class="form-group col-md-6">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
                     <label>Delay</label>
                     <input type="text" class="form-control" id="delay" placeholder="3 (sn)">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Cookie Expired Day Count</label>
+                    <input type="text" class="form-control" id="cookieExp" placeholder="7">
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Show Count Page Views</label>
+                    <input type="text" class="form-control" id="showCountPageviews" placeholder="0">
                 </div>
             </div>
             <div class="form-group">
@@ -59,41 +67,30 @@
                     placeholder="https://github.com/firatozz/Lite-Notification-Box">
             </div>
             <div class="form-row ml-4 pl-2">
-                <div class="form-group col-md-6 custom-control custom-switch">
+                <div class="form-group col-md-4 custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="autoClose">
-                    <label class="custom-control-label">AutoClose</label>
+                    <label class="custom-control-label" for="autoClose">AutoClose</label>
                 </div>
-                <div class="form-group col-md-6 custom-control custom-switch">
+                <div class="form-group col-md-4 custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" checked id="targetOpenNewTab">
-                    <label class="custom-control-label" for="customSwitch1">Target Open New Tab</label>
+                    <label class="custom-control-label" for="targetOpenNewTab">Target Open New Tab</label>
                 </div>
-            </div>
-            <div class="form-row ml-4 pl-2">
-                <div class="form-group col-md-6 custom-control custom-switch">
+                <div class="form-group col-md-4 custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="canScroll">
-                    <label class="custom-control-label">can Scroll</label>
-                </div>
-                <div class="form-group col-md-6 custom-control custom-switch">
-                    <input type="checkbox" class="custom-control-input" id="showAsExitIntent">
-                    <label class="custom-control-label">Show as Exit Intent</label>
+                    <label class="custom-control-label" for="canScroll">can Scroll</label>
                 </div>
             </div>
             <div class="form-row ml-4 pl-2">
-                <div class="form-group col-md-6 custom-control custom-switch">
+                <div class="form-group col-md-4 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="showAsExitIntent">
+                    <label class="custom-control-label" for="showAsExitIntent">Show as Exit Intent</label>
+                </div>
+                <div class="form-group col-md-4 custom-control custom-switch">
                     <input type="checkbox" class="custom-control-input" id="showOncePerSession">
-                    <label class="custom-control-label">Show Once Per Session</label>
+                    <label class="custom-control-label" for="showOncePerSession">Show Once Per Session</label>
                 </div>
             </div>
-            <div class="form-row">
-                <div class="form-group col-md-6">
-                    <label>Cookie Expired Day Count</label>
-                    <input type="text" class="form-control" id="cookieExp" placeholder="7">
-                </div>
-                <div class="form-group col-md-6">
-                    <label>Show Count Page Views</label>
-                    <input type="text" class="form-control" id="showCountPageviews" placeholder="0">
-                </div>
-            </div>
+
             <button onclick="test()" class="btn btn-lg btn-block btn-primary text-center">Try</button>
         </div>
     </div>
@@ -123,13 +120,17 @@
                 <a class="col-md-6 text-muted" href="https://github.com/firatozz/Sweet-Functional-Popup"
                     target="_blank">Documentation</a>
                 <br>
-                <a class="col-md-6 text-muted text-right" href="https://github.com/firatozz/" target="_blank">github.com/firatozz ©
+                <a class="col-md-6 text-muted text-right" href="https://github.com/firatozz/"
+                    target="_blank">github.com/firatozz ©
                     2019</a>
             </div>
         </div>
     </footer>
 
 </body>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+</script>
 <script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>
 <script type="text/javascript" src="../scripts/sweetFunctionalPopup.min.js"></script>
 <script>
