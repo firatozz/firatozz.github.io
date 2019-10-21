@@ -227,7 +227,6 @@ popUp1.setOptions({`;
             document.getElementById('code-section').innerHTML = string;
             Prism.highlightAll();
 
-
             var popUp2 = new sweetFunctionalPopup();
             popUp2.setOptions({
                 width:settings.width,
@@ -242,7 +241,7 @@ popUp1.setOptions({`;
                 showAsExitIntent: settings.showAsExitIntent,
                 showCountPageviews: settings.showCountPageviews,
                 showOncePerSession: settings.showOncePerSession,
-                
+                css: ".swFunctionalPopup {border-radius:10px;}"
             });
             console.log(string1);
     
