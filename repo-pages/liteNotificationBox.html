@@ -34,7 +34,7 @@
                 </div>
             </div>
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="inputState">Position</label>
                     <select id="position" class="form-control">
                         <option value="bottomRight">Bottom Right</option>
@@ -45,7 +45,7 @@
                         <option value="topCenter">Top Center</option>
                     </select>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="inputState">Animation</label>
                     <select id="animation" class="form-control">
                         <option selected value="slide">Slide</option>
@@ -53,17 +53,27 @@
                         <option value="bubble">Bubble</option>
                     </select>
                 </div>
+                <div class="form-group col-md-4">
+                    <label for="inputPassword4">Cookie Expired Day</label>
+                    <input type="text" class="form-control" id="cookieExpPre" placeholder="7 (day)">
+                </div>
             </div>
             <div class="form-group">
                 <label for="imageUrlPre">Image URL</label>
                 <input type="text" class="form-control" id="imageUrlPre"
-                    placeholder="https://firatozz.github.io/assets/img/freelyshout.png">
+                    value="https://i.ibb.co/bN6VWyr/javascript.png"
+                    placeholder="https://i.ibb.co/bN6VWyr/javascript.png">
             </div>
             <div class="form-group">
                 <label for="targetUrlPre">Target URL</label>
                 <input type="text" class="form-control" id="targetUrlPre"
                     value="https://github.com/firatozz/Lite-Notification-Box"
                     placeholder="https://github.com/firatozz/Lite-Notification-Box">
+            </div>
+            <div class="form-group">
+                <label for="cssPre">CSS</label>
+                <input type="text" class="form-control" id="cssPre" value=".ltImg{border-radius: 10px;}"
+                    placeholder=".ltImg{border-radius: 10px;}">
             </div>
             <div class="form-row ml-4 pl-2 mb-4">
                 <div class="form-group col-md-6 custom-control custom-switch">
@@ -107,8 +117,8 @@
     <footer class="footer mt-5 py-3" style="background: #eee;">
         <div class="container">
             <div class="row">
-                <a class="col-md-6 text-muted" href="https://github.com/firatozz/Lite-Notification-Box"
-                    target="_blank">Lite Notification Popup Documentation</a>
+                <a class="col-md-6 text-muted" href="https://github.com/firatozz/lite-notification-box"
+                    target="_blank">Lite Notification Box Documentation</a>
                 <br>
                 <a class="col-md-6 text-muted text-right" href="https://github.com/firatozz/"
                     target="_blank">github.com/firatozz ©
@@ -150,12 +160,7 @@
                 settings.cookieExp = t;
             }
 
-            var t = document.querySelector("#showCountPageviewsPre").value;
-            if (t != '') {
-                settings.showCountPageviews = t;
-            }
-
-            var t = document.querySelector("#imageurlPre").value;
+            var t = document.querySelector("#imageUrlPre").value;
             if (t != '') {
                 settings.imageUrl = t;
             }
@@ -165,9 +170,9 @@
                 settings.targetUrl = t;
             }
 
-            var t = document.querySelector("#autoClosePre").value;
+            var t = document.querySelector("#cssPre").value;
             if (t != '') {
-                settings.autoClose = t;
+                settings.css = t;
             }
 
             var t = document.querySelector("#targetOpenNewTabPre").checked;
@@ -193,7 +198,7 @@
 
             var string = `
             liteNotificationBox.init({`;
-            var stringValues = ["imageUrl", "animation", "targetUrl"];
+            var stringValues = ["imageUrl", "animation", "targetUrl", "position", "css"];
 
             var string1 = '';
 
@@ -212,15 +217,14 @@
 
 
             string += `});\n`;
-
+            console.log(string);
 
             document.getElementById('code-section').innerHTML = string;
             Prism.highlightAll();
 
-            liteNotificationBox.init();
-
-            liteNotificationBox.setOptions(settings);
+            liteNotificationBox.init(settings);
         }
     }
 </script>
+
 </html>
