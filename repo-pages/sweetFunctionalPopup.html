@@ -100,9 +100,12 @@
     <div class="container col-md-8">
         <h2>Sample Usage:</h2>
         <pre>
-            <code class="language-js" id="code-section">
+            <code class="language-html">
                     &ltscript type="text/javascript" src="../scripts/sweetFunctionalPopup.min.js">&lt/script&gt
-
+            </code>
+        </pre>
+        <pre>
+            <code class="language-js" id="code-section">
                     var popUp1 = new sweetFunctionalPopup();
                     popUp1.setOptions({
                         width: 300,
@@ -135,6 +138,7 @@
     function test() {
 
         var settings = {};
+
 
         var x = document.querySelector(".swFunctionalPopup");
         if (x == null) {
@@ -205,47 +209,36 @@
             }
 
 
-
-
-            var string = `&ltscript type="text/javascript" src="../scripts/sweetFunctionalPopup.min.js">&lt/script&gt
-
+            var string = `
 var popUp1 = new sweetFunctionalPopup();
 popUp1.setOptions({`;
+            var stringValues = ["imageUrl", "animation", "targetUrl"];
 
             var string1 = '';
 
             if (Object.keys(settings).length > 0) {
 
                 Object.keys(settings).forEach((key, index, self) => {
-                    string1 += "\n\t" + key + ": " + settings[key] + ",";
+                    if (stringValues.indexOf(key) != -1)
+                        string1 += "\n\t" + key + ": \"" + settings[key] + "\",";
+                    else
+                        string1 += "\n\t" + key + ": " + settings[key] + ",";
                 })
                 string1 = string1.substr(0, string1.length - 1);
                 string1 += "\n";
             }
             string += string1;
+
+
             string += `});\n`;
+
 
             document.getElementById('code-section').innerHTML = string;
             Prism.highlightAll();
 
             var popUp1 = new sweetFunctionalPopup();
 
-            popUp1.setOptions({
-                width: settings.width,
-                height: settings.height,
-                autoClose: settings.autoClose,
-                animation: settings.animation,
-                delay: settings.delay,
-                cookieExp: settings.cookieExp,
-                showCountPageviews: settings.showCountPageviews,
-                imageUrl: settings.imageUrl,
-                targetUrl: settings.targetUrl,
-                canScroll: settings.canScroll,
-                targetOpenNewTab: settings.targetOpenNewTab,
-                showAsExitIntent: settings.showAsExitIntent,
-                showOncePerSession: settings.showOncePerSession
-
-            });
+            popUp1.setOptions(settings);
         }
     }
 </script>
