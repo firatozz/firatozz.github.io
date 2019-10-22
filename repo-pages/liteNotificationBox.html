@@ -20,13 +20,17 @@
         <br>
         <div class="container col-md-8">
             <div class="form-row">
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="inputEmail4">Width</label>
                     <input type="text" class="form-control" id="widthPre" placeholder="300 (px)">
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-md-4">
                     <label for="inputPassword4">Height</label>
                     <input type="text" class="form-control" id="heightPre" placeholder="300 (px)">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="inputPassword4">Delay</label>
+                    <input type="text" class="form-control" id="delayPre" placeholder="1 (sn)">
                 </div>
             </div>
             <div class="form-row">
@@ -51,85 +55,172 @@
                 </div>
             </div>
             <div class="form-group">
-                <label for="imgurl">Image URL</label>
-                <input type="text" class="form-control" id="imgurl"
+                <label for="imageUrlPre">Image URL</label>
+                <input type="text" class="form-control" id="imageUrlPre"
                     placeholder="https://firatozz.github.io/assets/img/freelyshout.png">
             </div>
             <div class="form-group">
-                <label for="trgturl">Target URL</label>
-                <input type="text" class="form-control" id="trgturl"
+                <label for="targetUrlPre">Target URL</label>
+                <input type="text" class="form-control" id="targetUrlPre"
                     value="https://github.com/firatozz/Lite-Notification-Box"
                     placeholder="https://github.com/firatozz/Lite-Notification-Box">
             </div>
-            <button onclick="test()" class="btn btn-lg btn-block btn-primary text-center">Try</button>
+            <div class="form-row ml-4 pl-2 mb-4">
+                <div class="form-group col-md-6 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" checked id="targetOpenNewTabPre">
+                    <label class="custom-control-label" for="targetOpenNewTabPre">Target Open New Tab</label>
+                </div>
+                <div class="form-group col-md-6 custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input" id="showOncePerSessionPre">
+                    <label class="custom-control-label" for="showOncePerSessionPre">Show Once Per Session</label>
+                </div>
+            </div>
+            <button onclick="test()" class="btn btn-lg btn-block btn-primary text-center">Try It & Generate</button>
         </div>
     </div>
     <!-- Output -->
     <br><br>
-    <hr class="container col-md-6">
-    <div class="container col-md-5">
-        <h2>Usage:</h2>
+    <hr class="container col-md-8">
+    <div class="container col-md-8">
+        <h2>Sample Usage:</h2>
         <pre>
-            <code class="language-js">
+         <code class="language-html">
+                 &ltscript type="text/javascript" src="../scripts/liteNotificationBox.min.js">&lt/script&gt
+         </code>
+     </pre>
+        <pre>
+         <code class="language-js" id="code-section">
                 liteNotificationBox.init({
                     position: "bottomRight",
                     animation: "slide",
                     imageUrl: "https://firatozz.github.io/assets/img/freelyshout.png",
-                    targetUrl: "github.com/firatozz/Lite-Notification-Box",
+                    targetUrl: "www.google.com",
                     targetOpenNewTab: true,
-                    css: ".ltImg{border-radius:10px; background:#ccc;}",
+                    css: ".ltImg{border-radius:10px; background:#ccc;}, .ltCloseEl{width:8%;}",
                     cookieExp: 7,
                     showOncePerSession: false,
                 });
-            </code>
-        </pre>
+         </code>
+     </pre>
     </div>
 
+    <footer class="footer mt-5 py-3" style="background: #eee;">
+        <div class="container">
+            <div class="row">
+                <a class="col-md-6 text-muted" href="https://github.com/firatozz/Lite-Notification-Box"
+                    target="_blank">Lite Notification Popup Documentation</a>
+                <br>
+                <a class="col-md-6 text-muted text-right" href="https://github.com/firatozz/"
+                    target="_blank">github.com/firatozz ©
+                    2019</a>
+            </div>
+        </div>
+    </footer>
+
 </body>
+
+<script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>
+<script type="text/javascript" src="../scripts/liteNotificationBox.min.js"></script>
 <script>
     function test() {
+
+        var settings = {};
+
+
         var x = document.querySelector(".ltNotificationBox");
         if (x == null) {
-            var posi = position.options[position.selectedIndex].value;
-            var anim = animation.options[animation.selectedIndex].value;
-            var widthPre = document.querySelector("#widthPre").value == "" ? "300" : document.querySelector("#widthPre")
-                .value;
-            var heightPre = document.querySelector("#heightPre").value == "" ? "300" : document.querySelector(
-                "#heightPre").value;
-            var imageurl = document.querySelector("#imgurl").value == "" ?
-                "https://firatozz.github.io/assets/img/freelyshout.png" : document.querySelector("#imgurl").value;
-            var targeturl = document.querySelector("#trgturl").value == "" ?
-                "github.com/firatozz/Lite-Notification-Box" : document.querySelector("#trgturl").value
-            console.log(imageurl);
 
-            liteNotificationBox.init({
-                width: widthPre,
-                height: heightPre,
-                position: posi,
-                animation: anim,
-                imageUrl: imageurl,
-                targetUrl: targeturl,
-                targetOpenNewTab: true,
-                css: ".ltImg{border-radius:10px; background:#ccc;}, .ltCloseEl{width:8%;}",
-                cookieExp: 7,
-                showOncePerSession: false,
-            });
-        } else {
-            x.remove();
+            var t = document.querySelector("#widthPre").value;
+            if (t != '') {
+                settings.width = t;
+            }
+
+            var t = document.querySelector("#heightPre").value;
+            if (t != '') {
+                settings.height = t;
+            }
+
+            var t = document.querySelector("#delayPre").value;
+            if (t != '') {
+                settings.delay = t;
+            }
+
+            var t = document.querySelector("#cookieExpPre").value;
+            if (t != '') {
+                settings.cookieExp = t;
+            }
+
+            var t = document.querySelector("#showCountPageviewsPre").value;
+            if (t != '') {
+                settings.showCountPageviews = t;
+            }
+
+            var t = document.querySelector("#imageurlPre").value;
+            if (t != '') {
+                settings.imageUrl = t;
+            }
+
+            var t = document.querySelector("#targetUrlPre").value;
+            if (t != '') {
+                settings.targetUrl = t;
+            }
+
+            var t = document.querySelector("#autoClosePre").value;
+            if (t != '') {
+                settings.autoClose = t;
+            }
+
+            var t = document.querySelector("#targetOpenNewTabPre").checked;
+            if (t != false) {
+                settings.targetOpenNewTab = t;
+            }
+
+            var t = document.querySelector("#showOncePerSessionPre").checked;
+            if (t != false) {
+                settings.showOncePerSession = t;
+            }
+
+            var t = animation.options[animation.selectedIndex].value;
+            if (t != '') {
+                settings.animation = t;
+            }
+
+            var t = position.options[position.selectedIndex].value;
+            if (t != '') {
+                settings.position = t;
+            }
+
+
+            var string = `
+            liteNotificationBox.init({`;
+            var stringValues = ["imageUrl", "animation", "targetUrl"];
+
+            var string1 = '';
+
+            if (Object.keys(settings).length > 0) {
+
+                Object.keys(settings).forEach((key, index, self) => {
+                    if (stringValues.indexOf(key) != -1)
+                        string1 += "\n\t" + key + ": \"" + settings[key] + "\",";
+                    else
+                        string1 += "\n\t" + key + ": " + settings[key] + ",";
+                })
+                string1 = string1.substr(0, string1.length - 1);
+                string1 += "\n";
+            }
+            string += string1;
+
+
+            string += `});\n`;
+
+
+            document.getElementById('code-section').innerHTML = string;
+            Prism.highlightAll();
+
+            liteNotificationBox.init();
+
+            liteNotificationBox.setOptions(settings);
         }
     }
-
-    liteNotificationBox.init({
-        position: "bottomRight",
-        animation: "slide",
-        imageUrl: "https://firatozz.github.io/assets/img/freelyshout.png",
-        targetUrl: "www.google.com",
-        targetOpenNewTab: true,
-        css: ".ltImg{border-radius:10px; background:#ccc;}, .ltCloseEl{width:8%;}",
-        cookieExp: 7,
-        showOncePerSession: false,
-    });
 </script>
-<script type="text/javascript" src="../assets/plugins/prism/prism.js"></script>
-
 </html>
