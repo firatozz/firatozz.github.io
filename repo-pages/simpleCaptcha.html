@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Simple Captcha</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+
+<body onload="init();">
+
+    <div class="container mt-3">
+        <div style="text-align: center">
+            <h1>Simple Captcha</h1>
+        </div>
+    </div>
+    <br>
+    <hr>
+    <div class="container col-6">
+        <h2 class="text-center">Try It.</h2>
+        <br>
+        <div class="container col-12 text-center">
+            <div class="form-group col-12">
+                <canvas id="cptch" width="250" height="100"></canvas><br>
+                <button onclick="change()" class="btn btn-md  btn-info text-center">Refresh</button>
+            </div>
+            <div class="col-12 text-center">
+                <div class="form-group col-6" style="margin: 0 auto; padding: 10px;">
+                    <input type="text" class="form-control" id="validtxt" name="validtxt" placeholder="Enter Text...">
+                </div>
+                <div class="form-group col-6" style="margin: 0 auto;padding: 10px;">
+                    <button onclick="Valid()" class="btn btn-md btn-block btn-primary text-center">Try It</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer mt-5 py-3" style="background: #eee; position: fixed; left: 0px; bottom: 0px; width: 100%;">
+        <div class="container">
+            <div class="row">
+                <a class="col-md-6 text-muted" href="https://github.com/firatozz/captcha" target="_blank">Simple Captcha
+                    Documentation</a>
+                <br>
+                <a class="col-md-6 text-muted text-right" href="https://github.com/firatozz/"
+                    target="_blank">github.com/firatozz ©
+                    2019</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+<script src="../scripts/simpeCaptcha.js"></script>
+
+</html>
