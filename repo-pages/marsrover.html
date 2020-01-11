@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>MarsRover.js</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/rover.css">
+</head>
+
+<body>
+    <div class="container mt-3">
+        <div style="text-align: center">
+            <h2>MarsRover.js</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="col-12 row">
+        <div class="col-3">
+            <h5 class="text-left">Inputs:</h5>
+            <hr>
+            <div class="container table-bordered" style="border-radius: 6px;">
+                <div class="form-group">
+                    <div class="form-group row">
+                        <label class="col-5 mt-3" for="startPos">Start Position:</label>
+                        <input required type="text" class="form-control col-6 mt-2" id="startPos" placeholder="13N"
+                            value="00N" maxlength="3" pattern="[0-9][0-9][NEWS]">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button id="btnMove" class="btn btn-sm btn-info m-1 pl-3 pr-3"
+                        onclick="enteranceMove()">MOVE</button>
+                    <button id="btnLeft" class="btn btn-sm btn-info m-1 pl-3 pr-3"
+                        onclick="enteranceLeft()">LEFT</button>
+                    <button id="btnRight" class="btn btn-sm btn-info m-1 pl-3 pr-3"
+                        onclick="enteranceRight()">RIGHT</button>
+                </div>
+                <div class="form-group">
+                    <button id="startTest" onclick="test()" class="btn btn-info btn-block">Start</button>
+                </div>
+                <div class="container">
+                    <div class="form-group">
+                        <label class="text-left mt-2 pl-0" for="routePath">Route:</label>
+                        <div class="row">
+                            <input type="text" class="form-control col-9" id="routePath" disabled>
+                            <button id="clearPath" class="btn btn-danger btn-block col-1 ml-2">X</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container col-6">
+            <h5>Map:</h5>
+            <hr>
+            <div class="form-group row">
+                <label class="col-3 mt-2" for="mapGrid">Map Grid: </label>
+                <input type="text" min="2" class="form-control col-4" id="mapGrid" placeholder="E.g. : 5,5">
+                <button id="btnSetMap" class="col-2 btn btn-info ml-3" onclick="createMap()">Set Map Grids</button>
+                <button id="btnClearMap" class="col-2 btn btn-danger ml-3">Clear Map</button>
+            </div>
+
+            <div class="map">
+                <div class="parent"><img id="rover" src="../assets/img/Rover.png" alt="" width="200px"></div>
+            </div>
+        </div>
+        <div class="container col-3">
+            <h5>Logs:</h5>
+            <hr>
+            <div class="logs"><label id="roverLogs" for=""></label></div>
+            <div class="compass"><img src="../assets/img/compass.png" alt=""></div>
+        </div>
+    </div>
+    <footer class="footer mt-5 py-3" style="background: #eee;bottom: 0; position: fixed; width: 100%;">
+        <div class="container">
+            <div class="row">
+                <a class="col-md-6 text-muted" href="https://github.com/firatozz/MarsRover.js" target="_blank">Mars
+                    Rover</a>
+                <br>
+                <a class="col-md-6 text-muted text-right" href="https://github.com/firatozz/"
+                    target="_blank">github.com/firatozz ©
+                    2020</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+<script type="text/javascript" src="../scripts/rover.js"></script>
+<script>
+    function test() {
+        var rover = new marsRover();
+        rover.setCommand({
+            map: [5, 5]
+        });
+    }
+
+    function createMap() {
+        var rover = new marsRover();
+        rover.createMap();
+    }
+</script>
+
+</html>

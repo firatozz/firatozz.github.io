@@ -1,0 +1,76 @@
+.logs {
+  display: block;
+  overflow: auto;
+  height: 300px;
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 15px;
+  overflow-x: hidden;
+}
+
+.map {
+  height: 100%;
+  right: 0;
+  margin: 0 auto;
+  display: table;
+  border: none;
+}
+
+.parent {
+  display: grid;
+  grid-template-columns: repeat(5, 150px);
+  grid-template-rows: repeat(4, 150px);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+
+  position: relative;
+}
+
+.parent > div {
+  border: 1px solid #000;
+  text-align: center;
+}
+
+.parent img {
+  position: absolute;
+  width: 50px;
+  transition: 0.5s ease-out;
+  bottom: 0;
+  left: 0;
+  opacity: 0;
+}
+
+.parent > div > span {
+  opacity: 0.5;
+}
+
+.compass {
+  text-align: center;
+}
+
+.compass > img {
+  width: 300px;
+  padding: 30px;
+}
+
+.error {
+  color: red;
+  animation: erranim 2s infinite;
+  padding: 0 20px;
+}
+
+@keyframes erranim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+#startPos {
+  letter-spacing: 5px;
+}
